@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cemsi-cache-v11';
+const CACHE_NAME = 'cemsi-cache-v12';
 const urlsToCache = [
   '/CEMSI/',
   '/CEMSI/index.html',
