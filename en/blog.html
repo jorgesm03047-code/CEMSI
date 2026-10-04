@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog | CEMSI Knowledge Center</title>
+  <meta name="theme-color" content="#09090b" />
+  <link rel="icon" type="image/png" href="../apple-touch-icon.png" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+
+  <header class="site-header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="brand" aria-label="CEMSI Home">
+        <img src="../assets/images/logo-cemsi.webp" alt="CEMSI Logo" />
+        CEMSI
+      </a>
+
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="que-es-pdtr.html">P-DTR Method</a></li>
+          <li><a href="dr-alejandro-gutierrez.html">Credentials</a></li>
+          <li><a href="contacto.html">Location</a></li>
+          <li><a href="blog.html" style="color: var(--text);">Blog</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <div class="lang-switch">
+          <a href="../blog.html" title="Spanish"><img src="../assets/images/flags/mx.png" alt="MX" /></a>
+          <a href="blog.html" aria-current="true" title="English"><img src="../assets/images/flags/us.png" alt="US" /></a>
+        </div>
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg viewBox="0 0 24 24"><path d="M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18Zm0-2a7 7 0 1 0 0-14 7 7 0 0 0 0 14Z" /></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="min-height: 40vh; align-items: flex-end; padding-bottom: 4rem;">
+      <div class="bg-glow"></div>
+      <div class="container text-block reveal">
+        <span style="font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 1rem;">KNOWLEDGE CENTER</span>
+        <h1 style="font-size: var(--fs-h2); max-width: 900px; margin-left: 0;">Science-based neuromotor medicine.</h1>
+        <p style="margin-top: 1rem;">We are preparing articles, clinical case studies, and informative content on functional neurology, P-DTR, and the definitive resolution of chronic pain.</p>
+      </div>
+    </section>
+
+    <!-- Blog Grid (Coming Soon) -->
+    <section class="section section--surface" style="min-height: 50vh;">
+      <div class="container reveal">
+        
+        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 4rem;">
+          <div style="padding: 1rem 2rem; border: 1px solid var(--accent); color: var(--accent); border-radius: var(--r-pill); font-size: 1.25rem; font-weight: 800; letter-spacing: 0.1em; background: var(--accent-glow);">
+            COMING SOON
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; opacity: 0.4; pointer-events: none; filter: grayscale(50%);">
+          
+          <div class="tile" style="padding: 0; min-height: 400px; display: flex; flex-direction: column;">
+            <div style="height: 220px; background: url('../assets/images/fotos/terapia-manual-800.webp') center/cover; border-bottom: 1px solid var(--line); position: relative;">
+              <div style="position: absolute; top: 1rem; left: 1rem; background: var(--surface); font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: var(--r-pill); font-weight: 600; text-transform: uppercase;">Trauma Biology</div>
+            </div>
+            <div style="padding: 2rem; flex: 1;">
+              <h3 style="font-size: 1.25rem;">Why stretching a shortened muscle can worsen your injury</h3>
+              <p style="font-size: 0.95rem; margin-top: 1rem;">The neurobiology of muscle tension as a defense mechanism and the grave clinical error of forced stretching without neurological diagnosis.</p>
+            </div>
+          </div>
+
+          <div class="tile" style="padding: 0; min-height: 400px; display: flex; flex-direction: column;">
+            <div style="height: 220px; background: url('../assets/images/fotos/modelo-columna-800.webp') center/cover; border-bottom: 1px solid var(--line); position: relative;">
+              <div style="position: absolute; top: 1rem; left: 1rem; background: var(--surface); font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: var(--r-pill); font-weight: 600; text-transform: uppercase;">Clinical Cases</div>
+            </div>
+            <div style="padding: 2rem; flex: 1;">
+              <h3 style="font-size: 1.25rem;">The fascial system and tissue memory</h3>
+              <p style="font-size: 0.95rem; margin-top: 1rem;">How an old appendicitis scar could be causing your current shoulder pain through aberrant fascial receptor networks.</p>
+            </div>
+          </div>
+
+          <div class="tile" style="padding: 0; min-height: 400px; display: flex; flex-direction: column;">
+            <div style="height: 220px; background: url('../assets/images/fotos/evaluacion-refleja-800.webp') center/cover; border-bottom: 1px solid var(--line); position: relative;">
+              <div style="position: absolute; top: 1rem; left: 1rem; background: var(--surface); font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: var(--r-pill); font-weight: 600; text-transform: uppercase;">P-DTR®</div>
+            </div>
+            <div style="padding: 2rem; flex: 1;">
+              <h3 style="font-size: 1.25rem;">The body's control system: Difference between P-DTR and chiropractic</h3>
+              <p style="font-size: 0.95rem; margin-top: 1rem;">A deep dive into why mechanical adjustments fail long-term if the central nervous system continues to inhibit stabilizing musculature.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="padding: 4rem 0; border-top: 1px solid var(--line); text-align: center;">
+    <div class="container">
+      <p style="font-size: 0.875rem; color: var(--line-strong); margin-bottom: 1rem;">CEMSI © 2026. All rights reserved.</p>
+      <p style="font-size: 0.875rem;"><a href="terms-and-conditions.html" style="color: var(--line-strong); text-decoration: underline;">Terms and Conditions</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { html.classList.add('dark'); }
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        html.classList.toggle('dark');
+        localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+      });
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('is-visible');
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>

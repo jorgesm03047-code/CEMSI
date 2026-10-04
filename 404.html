@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Página no encontrada | CEMSI</title>
+  <meta name="theme-color" content="#09090b" />
+  <link rel="icon" type="image/png" href="apple-touch-icon.png" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body style="display: flex; flex-direction: column; min-height: 100vh;">
+
+  <header class="site-header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="brand" aria-label="CEMSI Inicio">
+        <img src="assets/images/logo-cemsi.webp" alt="CEMSI Logo" />
+        CEMSI
+      </a>
+      <div class="header__actions">
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+          <svg viewBox="0 0 24 24"><path d="M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18Zm0-2a7 7 0 1 0 0-14 7 7 0 0 0 0 14Z" /></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main style="flex: 1; display: flex; align-items: center; justify-content: center; padding: 120px 0;">
+    <section class="section" style="border: none; text-align: center;">
+      <div class="container text-block">
+        <span style="font-size: 5rem; font-weight: 800; color: var(--accent); display: block; line-height: 1;">404</span>
+        <h1 style="margin: 1rem 0 2rem;">Sistema nervioso no encontrado.</h1>
+        <p class="lead" style="margin: 0 auto 3rem;">Parece que el enlace que buscabas tiene un error de señal. Vamos a resetear el camino.</p>
+        <a href="index.html" class="btn btn--primary">Volver al Inicio</a>
+      </div>
+    </section>
+  </main>
+
+  <footer style="padding: 2rem 0; text-align: center; border-top: 1px solid var(--line);">
+    <div class="container">
+      <p style="font-size: 0.875rem; color: var(--muted);">CEMSI © 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { html.classList.add('dark'); }
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        html.classList.toggle('dark');
+        localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+      });
+    }
+  </script>
+</body>
+</html>

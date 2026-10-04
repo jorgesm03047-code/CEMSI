@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What is P-DTR? | CEMSI</title>
+  <meta name="description" content="Detailed explanation of Proprioceptive Deep Tendon Reflex and clinical neurodynamics." />
+  <meta name="theme-color" content="#09090b" />
+  <link rel="icon" type="image/png" href="../apple-touch-icon.png" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+</head>
+<body>
+
+  <header class="site-header" id="header">
+    <div class="container header__inner">
+      <a href="index.html" class="brand" aria-label="CEMSI Home">
+        <img src="../assets/images/logo-cemsi.webp" alt="CEMSI Logo" />
+        CEMSI
+      </a>
+
+      <nav class="nav" id="nav">
+        <ul class="nav__list">
+          <li><a href="que-es-pdtr.html" style="color: var(--text);">P-DTR Method</a></li>
+          <li><a href="dr-alejandro-gutierrez.html">Credentials</a></li>
+          <li><a href="contacto.html">Location</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+      <div class="header__actions">
+        <div class="lang-switch">
+          <a href="../que-es-pdtr.html" title="Spanish"><img src="../assets/images/flags/mx.png" alt="MX" /></a>
+          <a href="que-es-pdtr.html" aria-current="true" title="English"><img src="../assets/images/flags/us.png" alt="US" /></a>
+        </div>
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <svg viewBox="0 0 24 24"><path d="M12 21a9 9 0 1 1 0-18 9 9 0 0 1 0 18Zm0-2a7 7 0 1 0 0-14 7 7 0 0 0 0 14Z" /></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="min-height: 50vh; align-items: flex-end; padding-bottom: 4rem;">
+      <div class="bg-glow"></div>
+      <div class="container text-block reveal">
+        <span style="font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 1rem;">CLINICAL SCIENCE</span>
+        <h1 style="font-size: var(--fs-h2); max-width: 900px; margin-left: 0;">Proprioceptive Deep Tendon Reflex</h1>
+        <p style="margin-top: 1rem;">A deep dive into the neurological technology that resets the central nervous system to instantly eliminate chronic pain.</p>
+      </div>
+    </section>
+
+    <section class="section section--surface">
+      <div class="container">
+        <div class="text-block reveal">
+          <h2>The Control System Behind Movement</h2>
+          <p>Imagine your body is a complex network. The bones, joints, and muscles are the mechanical structure. The nervous system is the control center. When a system fails, we don't immediately replace the physical components; we first check if there is a signal error. Traditional medicine, however, tends to treat the human body purely as a mechanical structure, applying invasive treatments or massages to structures that are only reacting to bad signals.</p>
+          <p>P-DTR is the first neurological therapy that systematically addresses functional problems at the signal level: the mechanoreceptors.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 4rem;" class="reveal reveal-delay-1">
+          <div class="cred" style="padding: 2rem;">
+            <h3 style="font-size: 1.25rem;">1. The Trauma</h3>
+            <p style="margin-top: 1rem; font-size: 0.95rem;">An accident, severe injury, or prolonged bad posture damages the tissue. The receptors in that area start sending constant "danger" signals to the brain.</p>
+          </div>
+          <div class="cred" style="padding: 2rem;">
+            <h3 style="font-size: 1.25rem;">2. The Compensation</h3>
+            <p style="margin-top: 1rem; font-size: 0.95rem;">To protect the area, the motor cortex alters your mobility. It inhibits (weakens) certain muscles and causes spasms in others. This compensation generates pain elsewhere.</p>
+          </div>
+          <div class="cred" style="padding: 2rem;">
+            <h3 style="font-size: 1.25rem;">3. The Reset</h3>
+            <p style="margin-top: 1rem; font-size: 0.95rem;">Through specific stimuli and the deep tendon reflex, P-DTR isolates the defective receptor and "reboots" it. The brain stops receiving the danger signal, instantly removing the compensation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="padding: 4rem 0; border-top: 1px solid var(--line); text-align: center;">
+    <div class="container">
+      <p style="font-size: 0.875rem; color: var(--line-strong); margin-bottom: 1rem;">CEMSI © 2026. All rights reserved.</p>
+      <p style="font-size: 0.875rem;"><a href="terms-and-conditions.html" style="color: var(--line-strong); text-decoration: underline;">Terms and Conditions</a></p>
+    </div>
+  </footer>
+
+  <script>
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { html.classList.add('dark'); }
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        html.classList.toggle('dark');
+        localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+      });
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('is-visible');
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
