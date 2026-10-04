@@ -1,9 +1,9 @@
 const CACHE_NAME = 'cemsi-cache-v11';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/assets/css/styles.css',
-  '/assets/images/logo-cemsi.webp'
+  '/CEMSI/',
+  '/CEMSI/index.html',
+  '/CEMSI/assets/css/styles.css',
+  '/CEMSI/assets/images/logo-cemsi.webp'
 ];
 
 self.addEventListener('install', event => {
