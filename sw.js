@@ -1,4 +1,4 @@
-const CACHE_NAME = 'cemsi-cache-v14';
+const CACHE_NAME = 'cemsi-cache-v15';
 // Relative to sw.js location: works on GitHub Pages (/CEMSI/) and on localhost
 const urlsToCache = [
   './',
