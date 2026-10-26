@@ -1,51 +1,40 @@
-const CACHE_NAME = 'cemsi-cache-v13';
+const CACHE_NAME = 'cemsi-cache-v14';
+// Relative to sw.js location: works on GitHub Pages (/CEMSI/) and on localhost
 const urlsToCache = [
-  '/CEMSI/',
-  '/CEMSI/index.html',
-  '/CEMSI/assets/css/styles.css',
-  '/CEMSI/assets/images/logo-cemsi.webp'
+  './',
+  './index.html',
+  './assets/css/styles.css',
+  './assets/images/logo-cemsi.webp'
 ];
 
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => {
-        return cache.addAll(urlsToCache);
-      })
+      .then(cache => Promise.allSettled(urlsToCache.map(url => cache.add(url))))
   );
   self.skipWaiting();
 });
 
+// Network-first: always try the latest version from the server,
+// fall back to the cache only when offline.
 self.addEventListener('fetch', event => {
+  if (event.request.method !== 'GET') return;
+
   event.respondWith(
-    caches.match(event.request)
+    fetch(event.request)
       .then(response => {
-        // Cache hit - return response
-        if (response) {
-          return response;
+        // Only cache valid same-origin responses
+        if (response && response.status === 200 && response.type === 'basic') {
+          // IMPORTANT: Clone the response. A response is a stream
+          // and because we want the browser to consume the response
+          // as well as the cache consuming the response, we need
+          // to clone it so we have two streams.
+          const responseToCache = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, responseToCache));
         }
-        return fetch(event.request).then(
-          function(response) {
-            // Check if we received a valid response
-            if(!response || response.status !== 200 || response.type !== 'basic') {
-              return response;
-            }
-
-            // IMPORTANT: Clone the response. A response is a stream
-            // and because we want the browser to consume the response
-            // as well as the cache consuming the response, we need
-            // to clone it so we have two streams.
-            var responseToCache = response.clone();
-
-            caches.open(CACHE_NAME)
-              .then(function(cache) {
-                cache.put(event.request, responseToCache);
-              });
-
-            return response;
-          }
-        );
+        return response;
       })
+      .catch(() => caches.match(event.request))
   );
 });
 
