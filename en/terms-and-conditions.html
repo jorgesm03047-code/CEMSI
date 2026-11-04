@@ -15,7 +15,7 @@
         <img src="../assets/images/logo-cemsi.webp" alt="CEMSI Logo" />
         CEMSI
       </a>
-      <nav class="nav" id="nav">
+      <nav class="nav" id="nav" aria-label="Primary navigation">
         <ul class="nav__list">
           <li><a href="que-es-pdtr.html">P-DTR Method</a></li>
           <li><a href="dr-alejandro-gutierrez.html">Credentials</a></li>
@@ -23,6 +23,10 @@
           <li><a href="blog.html">Blog</a></li>
         </ul>
       </nav>
+
+      <button type="button" class="nav-toggle" id="navToggle" aria-controls="nav" aria-expanded="false" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
       <div class="header__actions">
         <div class="lang-switch">
           <a href="../terminos-y-condiciones.html" title="Español"><img src="../assets/images/flags/mx.png" alt="MX" /></a>
@@ -164,6 +168,7 @@
   </footer>
 
   <script>
+    document.documentElement.classList.add('js');
     const html = document.documentElement;
     const themeToggle = document.getElementById('themeToggle');
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { html.classList.add('dark'); }
@@ -180,5 +185,7 @@
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     });
   </script>
+
+  <script src="../assets/js/site-nav.js" defer></script>
 </body>
 </html>
