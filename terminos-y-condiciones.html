@@ -165,7 +165,6 @@
   </footer>
 
   <script>
-    document.documentElement.classList.add('js');
     const html = document.documentElement;
     const themeToggle = document.getElementById('themeToggle');
     if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { html.classList.add('dark'); }
@@ -182,7 +181,6 @@
       document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     });
   </script>
-
   <script src="assets/js/site-nav.js" defer></script>
 </body>
 </html>

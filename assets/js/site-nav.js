@@ -34,12 +34,6 @@
   });
 
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 900) setOpen(false);
+    if (window.innerWidth > 1024) setOpen(false);
   });
-
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js').catch(() => {});
-    });
-  }
 })();
